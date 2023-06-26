@@ -33,10 +33,10 @@ final public class FlaneurImageView: UIImageView {
             asynchronousState = .kingfisher
             self.kf.indicatorType = .activity
             self.kf.setImage(with: imageURL,
-                             placeholder: nil,
-                             options: nil,
-                             progressBlock: nil,
-                             completionHandler: { [weak self] (image, error, cacheType, url) in
+                             placeholder: .none,
+                             options: .none,
+                             progressBlock: .none,
+                             completionHandler: { [weak self] result in
                                 self?.asynchronousState = .none
             })
 

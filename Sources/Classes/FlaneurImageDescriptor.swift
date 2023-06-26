@@ -64,8 +64,14 @@ extension FlaneurImageDescriptor {
         switch self {
         case .url(let imageURL):
             ImageDownloader.default.downloadImage(with: imageURL,
-                                                  completionHandler: { image, error, url, data in
-                                                    resultHandler(image, error)
+                                                  options: .none,
+                                                  completionHandler: { result in
+                switch result {
+                case let .success(imageResult):
+                    resultHandler(imageResult.image, nil)
+                case let .failure(error):
+                    resultHandler(nil, error)
+                }
             })
         case .image(let image):
             resultHandler(image, nil)

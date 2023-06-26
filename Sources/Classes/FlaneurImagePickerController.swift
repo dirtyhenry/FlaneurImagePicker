@@ -150,7 +150,7 @@ final public class FlaneurImagePickerController: UIViewController {
     var currentImageSource: FlaneurImageSource? {
         didSet {
             // Not sure why this runs asynchronously, cf. #4
-            DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
                 guard let existingSelf = self else { return }
                 guard let currentImageSource = existingSelf.currentImageSource else { return }
                 existingSelf.loadMoreManager = nil
