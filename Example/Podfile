@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'FlaneurImagePicker_Example' do
   pod 'FlaneurImagePicker', :path => '../'
@@ -8,7 +8,7 @@ target 'FlaneurImagePicker_Example' do
   target 'FlaneurImagePicker_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.2'
-    pod 'Nimble', '~> 7.0'
+    pod 'Quick'
+    pod 'Nimble'
   end
 end

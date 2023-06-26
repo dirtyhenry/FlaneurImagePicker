@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.authors      = { "Flâneur" => "dev@flaneurapp.com" }
   s.source       = { :git => "https://github.com/FlaneurApp/FlaneurImagePicker.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
 
   s.module_name  = 'FlaneurImagePicker'
 
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
   s.framework = 'UIKit', 'Photos'
 
-  s.dependency 'IGListKit', '~> 3.0'
-  s.dependency 'ActionKit', '~> 2.1'
-  s.dependency 'Kingfisher', '~> 4.0'
+  s.dependency 'IGListKit'
+  s.dependency 'ActionKit'
+  s.dependency 'Kingfisher'
 
   s.pod_target_xcconfig = {
     'SWIFT_SWIFT3_OBJC_INFERENCE' => 'Default',

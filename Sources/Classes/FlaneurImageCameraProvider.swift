@@ -36,10 +36,16 @@ final class FlaneurImageCameraProvider: NSObject, FlaneurImageProvider {
             delegate?.didFailLoadingImages(with: .camera)
             return
         }
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let picker = self?.picker else {
+                return
+            }
 
-        picker.allowsEditing = false
-        picker.sourceType = .camera
-        parentVC?.present(picker, animated: true)
+            picker.allowsEditing = false
+            picker.sourceType = .camera
+            self?.parentVC?.present(picker, animated: true)
+        }
     }
     
     func fetchNextPage() {
