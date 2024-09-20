@@ -7,3 +7,7 @@ update:
 
 open:
 	open Example/FlaneurImagePicker.xcworkspace
+
+clean:
+	rm -rf Example/FlaneurImagePicker.xcworkspace/xcuserdata/
+	rm -rf Example/Pods/
